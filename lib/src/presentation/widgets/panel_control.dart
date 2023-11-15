@@ -1,19 +1,22 @@
+import 'package:converter/src/state/converter_actions.dart';
+import 'package:converter/src/state/converter_state.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
+import 'package:redux/redux.dart';
 
 class PanelControl extends StatelessWidget {
-  final Function onClick;
-
-  const PanelControl({super.key, required this.onClick});
+  const PanelControl({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final Store<ConverterState> store = StoreProvider.of(context);
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Row(
         mainAxisSize: MainAxisSize.max,
         children: [
           TextButton(
-              onPressed: () => onClick(),
+              onPressed: () => store.dispatch(ConverterConvertAction()),
               child: Container(
                   decoration: BoxDecoration(
                     color: const Color.fromARGB(255, 0, 0, 0),

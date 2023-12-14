@@ -1,24 +1,21 @@
 import 'package:converter/src/presentation/screens/convert_page.dart';
-import 'package:converter/src/state/converter_reducer.dart';
-import 'package:converter/src/state/converter_state.dart';
+import 'package:converter/src/presentation/screens/history_page.dart';
+import 'package:converter/src/state/converter_provider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_redux/flutter_redux.dart';
-import 'package:redux/redux.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  final store = Store<ConverterState>(reducer,
-      initialState: ConverterState.initialState());
 
   MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return StoreProvider(
-      store: store,
+    return MultiProvider(
+      providers: [ChangeNotifierProvider(create: (_) => ConverterProvider())],
       child: MaterialApp(
         title: 'Converter App',
         theme: ThemeData(
@@ -27,7 +24,11 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         debugShowCheckedModeBanner: false,
-        home: const ConvertPage(),
+        routes: {
+          '/converter': (context) => const ConvertPage(),
+          '/history': (context) => HistoryPage(),
+        },
+        initialRoute: "/converter",
       ),
     );
   }

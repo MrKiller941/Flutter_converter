@@ -1,15 +1,15 @@
-import 'package:converter/src/state/converter_actions.dart';
-import 'package:converter/src/state/converter_state.dart';
+import 'package:converter/src/state/converter_provider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_redux/flutter_redux.dart';
-import 'package:redux/redux.dart';
+import 'package:provider/provider.dart';
 
 class PanelInput extends StatelessWidget {
   const PanelInput({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final Store<ConverterState> store = StoreProvider.of(context);
+    
+    final converter = context.read<ConverterProvider>();
+
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Row(
@@ -28,8 +28,7 @@ class PanelInput extends StatelessWidget {
           const SizedBox(width: 8.0),
           Expanded(
             child: TextField(
-              onChanged: (text) =>
-                  store.dispatch(ConverterUpdateInputNumberAction(text)),
+              onChanged: (text) => converter.setInputNumber(text),
               decoration: InputDecoration(
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),

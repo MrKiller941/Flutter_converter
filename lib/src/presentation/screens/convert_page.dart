@@ -4,16 +4,9 @@ import 'package:converter/src/presentation/widgets/panel_input.dart';
 import 'package:converter/src/presentation/widgets/panel_result.dart';
 import 'package:flutter/material.dart';
 
-class ConvertPage extends StatefulWidget {
+class ConvertPage extends StatelessWidget {
   const ConvertPage({super.key});
 
-  @override
-  State<StatefulWidget> createState() {
-    return _ConvertPageState();
-  }
-}
-
-class _ConvertPageState extends State<ConvertPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

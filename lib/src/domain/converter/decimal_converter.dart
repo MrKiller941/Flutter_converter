@@ -1,7 +1,7 @@
 import 'dart:math';
 
-import 'package:converter/src/domain/i_decimal_converter.dart';
-import 'package:converter/src/domain/number_utils.dart';
+import 'package:converter/src/domain/converter/i_decimal_converter.dart';
+import 'package:converter/src/domain/converter/number_utils.dart';
 
 class DecimalConverter implements IDecimalConverter {
   @override

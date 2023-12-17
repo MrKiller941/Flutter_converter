@@ -1,4 +1,4 @@
-import 'package:converter/src/presentation/widgets/result_widget.dart';
+import 'package:converter/src/infrastructure/presentation/widgets/result_widget.dart';
 import 'package:converter/src/state/converter_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

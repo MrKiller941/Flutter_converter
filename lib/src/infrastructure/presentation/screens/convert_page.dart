@@ -1,7 +1,7 @@
-import 'package:converter/src/presentation/widgets/panel_base.dart';
-import 'package:converter/src/presentation/widgets/panel_control.dart';
-import 'package:converter/src/presentation/widgets/panel_input.dart';
-import 'package:converter/src/presentation/widgets/panel_result.dart';
+import 'package:converter/src/infrastructure/presentation/widgets/panel_base.dart';
+import 'package:converter/src/infrastructure/presentation/widgets/panel_control.dart';
+import 'package:converter/src/infrastructure/presentation/widgets/panel_input.dart';
+import 'package:converter/src/infrastructure/presentation/widgets/panel_result.dart';
 import 'package:flutter/material.dart';
 
 class ConvertPage extends StatelessWidget {

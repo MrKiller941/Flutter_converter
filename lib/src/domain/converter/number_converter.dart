@@ -5,7 +5,7 @@ import 'package:converter/src/domain/converter/i_number_converter.dart';
 import 'package:converter/src/domain/converter/invalid_input_exception.dart';
 import 'package:converter/src/domain/converter/number_utils.dart';
 import 'package:converter/src/domain/history/result.dart';
-import 'package:converter/src/repository/database_results.dart';
+import 'package:converter/src/infrastructure/data/database_results.dart';
 
 class NumberConverter implements INumberConverter {
   final IDecimalConverter converter = DecimalConverter();

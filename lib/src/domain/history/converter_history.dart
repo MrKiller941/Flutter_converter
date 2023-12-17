@@ -1,7 +1,7 @@
 import 'package:converter/src/domain/history/i_converter_history.dart';
 import 'package:converter/src/domain/history/i_converter_repository.dart';
 import 'package:converter/src/domain/history/result.dart';
-import 'package:converter/src/repository/database_results.dart';
+import 'package:converter/src/infrastructure/data/database_results.dart';
 
 class ConverterHistory implements IConverterHistory {
 

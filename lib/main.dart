@@ -1,16 +1,16 @@
-import 'package:converter/src/presentation/screens/convert_page.dart';
-import 'package:converter/src/presentation/screens/history_page.dart';
+import 'package:converter/src/infrastructure/presentation/screens/convert_page.dart';
+import 'package:converter/src/infrastructure/presentation/screens/history_page.dart';
 import 'package:converter/src/state/converter_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
 
-  MyApp({super.key});
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         routes: {
           '/converter': (context) => const ConvertPage(),
-          '/history': (context) => HistoryPage(),
+          '/history': (context) => const HistoryPage(),
         },
         initialRoute: "/converter",
       ),

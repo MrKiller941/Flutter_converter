@@ -14,24 +14,24 @@ class ConverterProvider with ChangeNotifier {
   String status = "init";
   List<Result> savedResults = [];
 
-  void setInputBase(int inputBase){
+  void setInputBase(int inputBase) {
     this.inputBase = inputBase;
     notifyListeners();
   }
 
-  void reverseBases(){
+  void reverseBases() {
     final tempBase = inputBase;
     inputBase = outputBase;
     outputBase = tempBase;
     notifyListeners();
   }
 
-  void setOutputBase(int outputBase){
+  void setOutputBase(int outputBase) {
     this.outputBase = outputBase;
     notifyListeners();
   }
 
-  void setInputNumber(String inputNumber){
+  void setInputNumber(String inputNumber) {
     this.inputNumber = inputNumber;
     notifyListeners();
   }
@@ -41,13 +41,18 @@ class ConverterProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  void convert(){
+  void convert() {
     try {
       outputNumber = converter.convert(inputNumber, inputBase, outputBase);
       status = "success";
     } catch (e) {
       status = "error";
     }
+    notifyListeners();
+  }
+
+  void deleteLast(int count) async {
+    await history.deleteLast(count);
     notifyListeners();
   }
 }

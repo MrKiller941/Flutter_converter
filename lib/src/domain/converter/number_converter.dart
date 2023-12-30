@@ -13,6 +13,7 @@ class NumberConverter implements INumberConverter {
 
   @override
   String? convert(String number, int fromBase, int toBase) {
+    // // Проверяем, является ли входной номер допустимым для данной системы счисления
     if (!NumberUtils.isValidInput(number, fromBase)) {
       throw InvalidInputException();
     }
@@ -25,8 +26,11 @@ class NumberConverter implements INumberConverter {
       ));
       return number;
     }
+    // // Преобразуем входное число в десятичную систему счисления
     int decimal = converter.convertToDecimal(number, fromBase);
+    // Затем преобразуем десятичное число в желаемую систему счисления
     String convertedNumber = converter.convertFromDecimal(decimal, toBase);
+     // Сохраняем результат в репозиторий и возвращаем преобразованное число
     repository.add(Result(
       inputBase: fromBase,
         outputBase: toBase,

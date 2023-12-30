@@ -13,8 +13,11 @@ class HistoryPage extends StatelessWidget {
     return Scaffold(
         body: SafeArea(
             child: Column(
-      mainAxisSize: MainAxisSize.max,
-      children: converter.savedResults.map((e) => ResultWidget(e)).toList().reversed.toList()
-    )));
+                mainAxisSize: MainAxisSize.max,
+                children: converter.savedResults
+                    .map((e) => ResultWidget(e))
+                    .toList()
+                    .reversed
+                    .toList())));
   }
 }

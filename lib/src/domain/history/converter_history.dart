@@ -11,5 +11,8 @@ class ConverterHistory implements IConverterHistory {
   Future<List<Result>> getHistory() {
     return repository.getAll();
   }
-  
+ @override
+  Future<void> deleteLast(int count) {
+    return repository.deleteLast(count);
+  }
 }
